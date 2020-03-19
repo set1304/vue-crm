@@ -6,15 +6,19 @@ import router from './router'
 import store from './store'
 import 'materialize-css/dist/js/materialize.min'
 import dateFilter from './filters/date.filter'
+import currencyFilter from './filters/currency.filter'
 import massegePlugin from './utils/messages.plugin'
 import firebase from "firebase/app"
 import 'firebase/auth';
 import 'firebase/database';
+import Loader from "./components/app/Loader";
 
 Vue.config.productionTip = false;
 Vue.use(massegePlugin);
 Vue.use(Vuelidate);
 Vue.filter('date', dateFilter);
+Vue.filter('currency', currencyFilter);
+Vue.component('Loader', Loader)
 
 const firebaseConfig = {
   apiKey: "AIzaSyDegViSYJf1tvNdrTv8QdxS3eu9yRLI2xo",
